@@ -2266,6 +2266,20 @@ window.CANCIONERO_DATA = {
         "QUIERO OIR SU TIERNA VOZ\nY SEGUIRLE SIEMPRE EN POS\nGLORIA, GLORIA SEA A \nNUESTRO BUEN PASTOR",
         "LIBRE ESTOY, LIBRE ESTOY\nPOR LA GRACIA DEL SEÑOR LIBRE ESTOY\nLIBRE ESTOY, LIBRE ESTOY\nALELUYA POR LA FE LIBRE ESTOY"
       ]
+    },
+      {
+      "id": 150,
+      "titulo": "Señor Mi Redentor Y Roca",
+      "tipo": 1,
+      "diapositivas": [
+        "Señor, mi Redentor y Roca\nGran tesoro de mi corazón\nMi Dios, como tú no hay otro\nSólo en ti hay gozo y salvación",
+         "Tu amor, más alto que los cielos\nY tu gracia, más honda que el mar\nTu ley es mi sabiduría\nMi bien mayor y mi necesidad",
+         "Señor, mi Redentor y Roca\nDe mi vida fuerte defensor\nSeñor, tú eres mi espada\nContra el mal, mi escudo protector",
+         "Mi canción si acechan enemigos\nEsperanza en medio del dolor\nMi bien en todo sufrimiento\nRefugio fiel en densa oscuridad",
+         "Señor, mi Redentor y Roca\nDe mi ruina dulce Salvador\nMi cruz y culpa en tus hombros\nTú por mí sufriste hasta morir",
+         "Mas tú venciste a la muerte\nEn ti encuentro libertad\nMas tú venciste a la muerte\nY en ti encuentro libertad",
+         "Señor, mi Redentor y Roca\nQuiero vivir mis días para ti\n\nQuiero vivir mis días para ti"
+      ]
     }
   ]
 };
