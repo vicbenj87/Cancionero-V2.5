@@ -156,9 +156,8 @@ window.CANCIONERO_CONFIG = {
     /* En false oculta el botón entero, por si no se quiere usar. */
     activo: true,
 
-    semanas: [
-      // { desde: 'AAAA-MM-DD', ids: [ /* exactamente 15 IDs */ ] }
-    ]
+    semanas: [12, 45, 78, 102, 156]    // { desde: 'AAAA-MM-DD', ids: [ /* exactamente 15 IDs */ ] }
+    
   }
 };
 
