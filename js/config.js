@@ -152,12 +152,12 @@ window.CANCIONERO_CONFIG = {
        { desde: '2026-08-30', ids: [12, 5, 8, 41, 3, 77, 102, 9, 200, 15,
                                      33, 61, 14, 88, 27] }
    ------------------------------------------------------------------------- */
-  listaSemanal: {
-    /* En false oculta el botón entero, por si no se quiere usar. */
+listaSemanal: {
     activo: true,
-
-    semanas: [12, 45, 78, 102, 156]    // { desde: 'AAAA-MM-DD', ids: [ /* exactamente 15 IDs */ ] }
-    
+    semanas: [
+        { desde: '2026-09-07', ids: [42, 87, 103, 115, 134] }
+    ]
+}
   }
 };
 
