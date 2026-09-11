@@ -118,8 +118,8 @@ body.sin-scroll { overflow: hidden; }
    ("N canciones · N fondos animados"), que ahora sigue existiendo oculto
    (ver index.html) para no romper el conteo que usa js/app.js. */
 .portada__logo {
-  height: 84px; /* respaldo para navegadores sin soporte de clamp() */
-  height: clamp(58px, 12vw, 82px);
+  height: 128px; /* respaldo para navegadores sin soporte de clamp() */
+  height: clamp(96px, 16vw, 144px);
   width: auto;
   display: block;
 }
@@ -757,11 +757,4 @@ body.sin-scroll { overflow: hidden; }
 /* ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
-}
-
-/* --- Ajuste manual: logo al doble de tamaño --- */
-img[src*="logo-ibm-el-vivero"] {
-  width: 200% !important;
-  height: auto !important;
-  max-width: none !important;
 }
