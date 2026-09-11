@@ -118,8 +118,8 @@ body.sin-scroll { overflow: hidden; }
    ("N canciones · N fondos animados"), que ahora sigue existiendo oculto
    (ver index.html) para no romper el conteo que usa js/app.js. */
 .portada__logo {
-  height: 64px; /* respaldo para navegadores sin soporte de clamp() */
-  height: clamp(48px, 8vw, 72px);
+  height: 84px; /* respaldo para navegadores sin soporte de clamp() */
+  height: clamp(58px, 12vw, 82px);
   width: auto;
   display: block;
 }
