@@ -151,14 +151,27 @@ window.CANCIONERO_CONFIG = {
      Ejemplo (quita el comentario y pon tus 15 IDs reales):
        { desde: '2026-08-30', ids: [12, 5, 8, 41, 3, 77, 102, 9, 200, 15,
                                      33, 61, 14, 88, 27] }
-   ------------------------------------------------------------------------- */
-listaSemanal: {
+  -------------------------------------------------------------------------- */
+  listaSemanal: {
+    /* En false oculta el botón entero, por si no se quiere usar. */
     activo: true,
+
     semanas: [
-        { desde: '2026-09-07', ids: [42, 87, 103, 115, 134] }
+      // Ejemplo con los coros que pediste (IDs reales de js/data/canciones.js):
+      //  85 → Nuestro canto expresa un sentir
+      //  17 → Aqui estoy yo
+      // 143 → Grande amor sublime eterno
+      //  78 → Me hace bien
+      //  98 → Portador de tu gloria
+      //
+      // OJO: puse '2026-09-06' (domingo de esta semana) solo para que se vea
+      // activo ahora mismo en la vista previa. Cámbialo por el domingo real
+      // que corresponda antes de subirlo (por ejemplo '2026-09-13' para que
+      // se active recién ese día).
+      { desde: '2026-09-06', ids: [85, 17, 143, 78, 98] }
     ]
-}
-  };
+  }
+};
 
 /* ----------------------------------------------------------------------------
    Rutas de medios
