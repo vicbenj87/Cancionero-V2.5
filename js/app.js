@@ -302,6 +302,26 @@
 
   /* Icono de tres líneas del botón de letra. Se construye a mano porque
      innerHTML con SVG en cada una de las 349 filas sale más caro. */
+  /* Icono de pantalla (monitor) del botón Proyectar. */
+  function iconoPantalla() {
+    var NS = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    var marco = document.createElementNS(NS, 'rect');
+    marco.setAttribute('x', 3); marco.setAttribute('y', 4);
+    marco.setAttribute('width', 18); marco.setAttribute('height', 13);
+    marco.setAttribute('rx', 2);
+    svg.appendChild(marco);
+    [[12, 17, 12, 21], [8, 21, 16, 21]].forEach(function (l) {
+      var linea = document.createElementNS(NS, 'line');
+      linea.setAttribute('x1', l[0]); linea.setAttribute('y1', l[1]);
+      linea.setAttribute('x2', l[2]); linea.setAttribute('y2', l[3]);
+      svg.appendChild(linea);
+    });
+    return svg;
+  }
+
   function iconoLetra() {
     var NS = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(NS, 'svg');
@@ -367,7 +387,16 @@
     letra.setAttribute('aria-label',
       'Proyectar ' + c.titulo + ', canción ' + c.id + ', ' + c.diapositivas.length +
       ' diapositivas, ' + CFG.indice.tipos[c.tipo].nombre);
-    letra.appendChild(iconoLetra());
+    /* Icono de pantalla dentro de una "tarjeta" que se despliega al pasar el
+       cursor y muestra el texto PROYECTAR CANCIÓN (ver .ver-letra en app.css). */
+    var tarjeta = document.createElement('span');
+    tarjeta.className = 'ver-letra__tarjeta';
+    var rotulo = document.createElement('span');
+    rotulo.className = 'ver-letra__texto';
+    rotulo.textContent = 'PROYECTAR CANCIÓN';
+    tarjeta.appendChild(rotulo);
+    tarjeta.appendChild(iconoPantalla());
+    letra.appendChild(tarjeta);
 
     li.appendChild(btn);
     li.appendChild(letra);
@@ -644,12 +673,10 @@
      acertar con menos de 1 px de error entre 20 y 160 px.
      ====================================================================== */
 
-  function ajustarTipografia() {
-    var el = dom.diapositiva;
-    var min = CFG.visor.tipografia.min;
-    var max = CFG.visor.tipografia.max;
+  /* Mayor tamaño (entre min y max) que cabe en la diapositiva con el modo de
+     corte de línea que tenga puesto el elemento en ese momento. */
+  function buscarTamano(el, min, max) {
     var mejor = min;
-
     for (var paso = 0; paso < 9; paso++) {
       var medio = (min + max) / 2;
       el.style.fontSize = medio + 'px';
@@ -657,7 +684,31 @@
                  (el.scrollWidth <= el.clientWidth + 1);
       if (cabe) { mejor = medio; min = medio; } else { max = medio; }
     }
-    el.style.fontSize = Math.floor(mejor) + 'px';
+    return mejor;
+  }
+
+  /* Se prueba primero con cada verso en su línea (sin partirlo): así la letra
+     crece hasta llenar el ancho de la pantalla. Si así quedara mucho más chica
+     que partiendo líneas (pantallas angostas, versos largos), se usa el ajuste
+     de siempre, que parte líneas para aprovechar el alto. */
+  function ajustarTipografia() {
+    var el = dom.diapositiva;
+    var min = CFG.visor.tipografia.min;
+    var max = CFG.visor.tipografia.max;
+
+    el.style.whiteSpace = '';                         // ajuste de siempre
+    var conCorte = Math.floor(buscarTamano(el, min, max));
+
+    el.style.whiteSpace = 'pre';                      // versos sin partir
+    var sinCorte = Math.floor(buscarTamano(el, min, max));
+    el.style.fontSize = sinCorte + 'px';
+    var sinCorteCabe = (el.scrollHeight <= el.clientHeight + 1) &&
+                       (el.scrollWidth <= el.clientWidth + 1);
+
+    if (sinCorteCabe && sinCorte >= conCorte * 0.6) { return; }
+
+    el.style.whiteSpace = '';
+    el.style.fontSize = conCorte + 'px';
   }
 
   /* ======================================================================
@@ -802,6 +853,7 @@
     dom.pantallaLetra.setAttribute('data-abierto', 'true');
     dom.pantallaLetra.setAttribute('aria-hidden', 'false');
     dom.pantallaLetra.scrollTop = 0;
+    dom.pantallaLetra.querySelector('.letra-barra').removeAttribute('data-oculta');
     // El foco va al contenedor para que las teclas de scroll funcionen ya.
     dom.pantallaLetra.focus({ preventScroll: true });
   }
@@ -1095,6 +1147,25 @@
     var reajustar = retardar(function () {
       if (dom.visor.getAttribute('data-abierto') === 'true') { ajustarTipografia(); }
     }, 120);
+
+    /* --- Letra completa: la barra se esconde al bajar y vuelve al subir --- */
+    (function () {
+      var barra = dom.pantallaLetra.querySelector('.letra-barra');
+      var ultimo = 0;
+      dom.pantallaLetra.addEventListener('scroll', function () {
+        var y = dom.pantallaLetra.scrollTop;
+        var delta = y - ultimo;
+        if (y < 24 || delta < -6) { barra.removeAttribute('data-oculta'); }
+        else if (delta > 6) { barra.setAttribute('data-oculta', 'true'); }
+        ultimo = y;
+      }, { passive: true });
+      barra.addEventListener('focusin', function () { barra.removeAttribute('data-oculta'); });
+    })();
+
+    /* Con la tipografía ya cargada las medidas cambian: se reajusta la diapositiva. */
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(reajustar);
+    }
 
     window.addEventListener('resize', reajustar);
     window.addEventListener('orientationchange', reajustar);
