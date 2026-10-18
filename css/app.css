@@ -500,7 +500,7 @@ body.sin-scroll { overflow: hidden; }
   inset: 0;
   display: grid;
   place-items: center;
-  padding: 4vh 3vw;
+  padding: max(60px, 9vh) 5vw max(64px, 10vh);
 }
 
 .diapositiva {
