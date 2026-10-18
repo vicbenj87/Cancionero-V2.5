@@ -675,12 +675,15 @@
 
   /* Mayor tamaño (entre min y max) que cabe en la diapositiva con el modo de
      corte de línea que tenga puesto el elemento en ese momento. */
-  function buscarTamano(el, min, max) {
+  function buscarTamano(el, min, max, alto) {
     var mejor = min;
     for (var paso = 0; paso < 9; paso++) {
       var medio = (min + max) / 2;
       el.style.fontSize = medio + 'px';
-      var cabe = (el.scrollHeight <= el.clientHeight + 1) &&
+      /* El alto se compara con el espacio libre de la escena (no con el alto
+         del propio texto): con pantallas escaladas el redondeo de medio píxel
+         hacía fallar la prueba y la letra se quedaba chica. */
+      var cabe = (el.scrollHeight <= alto + 1) &&
                  (el.scrollWidth <= el.clientWidth + 1);
       if (cabe) { mejor = medio; min = medio; } else { max = medio; }
     }
@@ -695,14 +698,17 @@
     var el = dom.diapositiva;
     var min = CFG.visor.tipografia.min;
     var max = CFG.visor.tipografia.max;
+    var escena = el.parentNode;
+    var est = window.getComputedStyle(escena);
+    var alto = escena.clientHeight - parseFloat(est.paddingTop) - parseFloat(est.paddingBottom);
 
     el.style.whiteSpace = '';                         // ajuste de siempre
-    var conCorte = Math.floor(buscarTamano(el, min, max));
+    var conCorte = Math.floor(buscarTamano(el, min, max, alto));
 
     el.style.whiteSpace = 'pre';                      // versos sin partir
-    var sinCorte = Math.floor(buscarTamano(el, min, max));
+    var sinCorte = Math.floor(buscarTamano(el, min, max, alto));
     el.style.fontSize = sinCorte + 'px';
-    var sinCorteCabe = (el.scrollHeight <= el.clientHeight + 1) &&
+    var sinCorteCabe = (el.scrollHeight <= alto + 1) &&
                        (el.scrollWidth <= el.clientWidth + 1);
 
     if (sinCorteCabe && sinCorte >= conCorte * 0.6) { return; }
