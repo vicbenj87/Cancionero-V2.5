@@ -500,12 +500,12 @@ body.sin-scroll { overflow: hidden; }
   inset: 0;
   display: grid;
   place-items: center;
-  padding: 6vh 8vw;
+  padding: 4vh 3vw;
 }
 
 .diapositiva {
   width: 100%;
-  max-width: 1600px;
+  max-width: 100%;
   max-height: 100%;
   text-align: center;
   font-family: var(--proyeccion);
@@ -777,3 +777,67 @@ body.sin-scroll { overflow: hidden; }
   margin: 0;
   color: var(--hueso-tenue);
 }
+
+
+/* ==========================================================================
+   Botón Proyectar (.ver-letra): icono de pantalla + tarjeta que se despliega
+   al pasar el cursor y revela el texto «PROYECTAR CANCIÓN».
+   ========================================================================== */
+.fila-cancion { position: relative; }
+.ver-letra { position: relative; }
+.ver-letra svg { width: 22px; height: 22px; stroke-width: 1.7; stroke-linejoin: round; }
+
+.ver-letra__tarjeta {
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: var(--radio);
+  transition: width .28s ease, top .28s ease, bottom .28s ease,
+              background .2s, box-shadow .28s, border-color .2s;
+  border: 1px solid transparent;
+}
+.ver-letra__tarjeta svg { flex: 0 0 48px; width: 22px; height: 22px; padding: 0 13px; box-sizing: content-box; transition: transform .28s ease; }
+.ver-letra__texto {
+  flex: 1 1 auto;
+  padding-left: calc(var(--u) * 2);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  white-space: nowrap;
+  text-align: right;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+@media (hover: hover) {
+  .ver-letra:hover .ver-letra__tarjeta,
+  .ver-letra:focus-visible .ver-letra__tarjeta {
+    width: 236px;
+    top: -4px; bottom: -4px;
+    z-index: 5;
+    background: var(--noche-3);
+    border-color: rgba(232, 210, 154, .45);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .5);
+  }
+  .ver-letra:hover .ver-letra__texto,
+  .ver-letra:focus-visible .ver-letra__texto { opacity: 1; transition-delay: .08s; }
+  .ver-letra:hover .ver-letra__tarjeta svg { transform: scale(1.12); }
+}
+.fila-cancion:hover, .fila-cancion:focus-within { z-index: 2; }
+
+/* Letra completa: la barra superior se esconde al bajar y vuelve al subir. */
+.letra-barra { transition: transform .25s ease, opacity .2s ease; }
+.letra-barra[data-oculta="true"] {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Con el cursor encima la tarjeta debe verse sólida (la regla de la fila le
+   dejaba 75 % de opacidad y se transparentaba la etiqueta de al lado). */
+.fila-cancion .ver-letra:hover,
+.fila-cancion .ver-letra:focus-visible { opacity: 1; }
