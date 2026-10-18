@@ -100,7 +100,7 @@ window.CANCIONERO_CONFIG = {
     gestosTactiles: true,
 
     /* Tamaño de letra de proyección, en píxeles, para el autoajuste. */
-    tipografia: { min: 20, max: 160 }
+    tipografia: { min: 20, max: 420 }
   },
 
   /* --- Índice ------------------------------------------------------------ */
