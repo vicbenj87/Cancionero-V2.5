@@ -1,6 +1,6 @@
 /* ============================================================================
-   canciones.js · generado por editor.html el 31/7/2026, 23:47:53
-   150 canciones · hasta 22 diapositivas cada una
+   canciones.js · generado por editor.html el 7/11/2026, 14:37:47
+   153 canciones · hasta 22 diapositivas cada una
    ----------------------------------------------------------------------------
    Sube este archivo a GitHub sobre js/data/canciones.js. Es lo único que hay
    que cambiar para actualizar el repertorio de la web.
@@ -8,7 +8,7 @@
 
 window.CANCIONERO_DATA = {
   "version": 1,
-  "generado": "2026-08-01",
+  "generado": "2026-11-07",
   "canciones": [
     {
       "id": 1,
@@ -765,16 +765,16 @@ window.CANCIONERO_DATA = {
       "titulo": "En Jesús me esconderé",
       "tipo": 1,
       "diapositivas": [
-        "Al abrigo del Señor Altísimo habitaré\nA la sombra del omnipotente \nRey,descansaré",
+        "Al abrigo del Señor Altísimo habitaré\nA la sombra del omnipotente \nRey, descansaré",
         "Si la enfermedad acecha, si hay plaga por doquier\nFirme en Sus promesas estaré, \nen Jesús me esconderé",
         "En Ti confío, Dios, poderoso Emanuel\nEn Ti está mi fe, \nen Jesús me esconderé",
         "A la voz del Salvador Sus ángeles \nme cuidarán\nCon Su mano soberana al tropezar \nme sostendrá",
         "En Sus alas de refugio mis temores rendiré\nMe rodea Su fidelidad, \nen Jesús me esconderé",
         "En Ti confío, Dios, poderoso Emanuel\nEn Ti está mi fe, \nen Jesús me esconderé",
         "Aunque miles caigan junto a mí \ny muerte pueda ver\nLa maldad no vencerá mientras \nJesús conmigo esté",
-        "//Porque Él ha resucitado \nel morir no temeré//\nMientras viva y por la eternidad, \nen Jesús me esconderé",
+        "//   Porque Él ha resucitado \nel morir no temeré   //\nMientras viva y por la eternidad, \nen Jesús me esconderé",
         "//En Ti confío, Dios, \npoderoso Emanuel\nEn Ti está mi fe, \nen Jesús me esconderé//",
-        "en Jesús me esconderé"
+        "En Jesús me esconderé"
       ]
     },
     {
@@ -1297,7 +1297,7 @@ window.CANCIONERO_DATA = {
         "La batalla terminó, \nno hay vergüenza ni temor\nYa la muerte derrotó",
         "\"Tú, mi Salvación, mi fortaleza\nEsperanza fiel y roca eterna\nMi alma, o Dios, esperará por Ti\"",
         "En mi soledad, tú, mi consuelo\nRefugio fiel, mi fundamento\nMi alma, o Dios, esperará por Ti",
-        "//Derramamos nuestras almas\nAnte Ti, Señor\nConfiaremos en tu gracia\nNuestro Salvador//"
+        "Derramamos nuestras almas\nAnte Ti, Señor\nConfiaremos en tu gracia\nNuestro Salvador"
       ]
     },
     {
@@ -1777,11 +1777,9 @@ window.CANCIONERO_DATA = {
         "¿Qué me puede dar perdón?\nSolo de Jesús la sangre;\n¿Y un nuevo corazón?\nSolo de Jesús la sangre;",
         "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\nSolo de Jesús la sangre.",
         "Fue el rescate eficaz,\nSolo de Jesús la sangre;\nTrajo santidad y paz,\nSolo de Jesús la sangre.",
-        "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\nSolo de Jesús la sangre.",
-        "Veo para mí salud,\nSolo de Jesús la sangre;\nTiene de sanar virtud,\nSolo de Jesús la sangre.",
-        "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\nSolo de Jesús la sangre.",
         "Cantaré junto a Sus pies,\nSolo de Jesús la sangre;\nEl Cordero digno es,\nSolo de Jesús la sangre.",
-        "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\nSolo de Jesús la sangre."
+        "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\n///Solo de Jesús la sangre.///",
+        "Todo debo a Él\nCristo lo pagó\nDe las manchas del pecar\nCual nieve me lavó"
       ]
     },
     {
@@ -2267,18 +2265,48 @@ window.CANCIONERO_DATA = {
         "LIBRE ESTOY, LIBRE ESTOY\nPOR LA GRACIA DEL SEÑOR LIBRE ESTOY\nLIBRE ESTOY, LIBRE ESTOY\nALELUYA POR LA FE LIBRE ESTOY"
       ]
     },
-      {
-      "id": 150,
+    {
+      "id": 151,
       "titulo": "Señor Mi Redentor Y Roca",
       "tipo": 1,
       "diapositivas": [
         "Señor, mi Redentor y Roca\nGran tesoro de mi corazón\nMi Dios, como tú no hay otro\nSólo en ti hay gozo y salvación",
-         "Tu amor, más alto que los cielos\nY tu gracia, más honda que el mar\nTu ley es mi sabiduría\nMi bien mayor y mi necesidad",
-         "Señor, mi Redentor y Roca\nDe mi vida fuerte defensor\nSeñor, tú eres mi espada\nContra el mal, mi escudo protector",
-         "Mi canción si acechan enemigos\nEsperanza en medio del dolor\nMi bien en todo sufrimiento\nRefugio fiel en densa oscuridad",
-         "Señor, mi Redentor y Roca\nDe mi ruina dulce Salvador\nMi cruz y culpa en tus hombros\nTú por mí sufriste hasta morir",
-         "Mas tú venciste a la muerte\nEn ti encuentro libertad\nMas tú venciste a la muerte\nY en ti encuentro libertad",
-         "Señor, mi Redentor y Roca\nQuiero vivir mis días para ti\n\nQuiero vivir mis días para ti"
+        "Tu amor, más alto que los cielos\nY tu gracia, más honda que el mar\nTu ley es mi sabiduría\nMi bien mayor y mi necesidad",
+        "Señor, mi Redentor y Roca\nDe mi vida fuerte defensor\nSeñor, tú eres mi espada\nContra el mal, mi escudo protector",
+        "Mi canción si acechan enemigos\nEsperanza en medio del dolor\nMi bien en todo sufrimiento\nRefugio fiel en densa oscuridad",
+        "Señor, mi Redentor y Roca\nDe mi ruina dulce Salvador\nMi cruz y culpa en tus hombros\nTú por mí sufriste hasta morir",
+        "Mas tú venciste a la muerte\nEn ti encuentro libertad\nMas tú venciste a la muerte\nY en ti encuentro libertad",
+        "Señor, mi Redentor y Roca\nQuiero vivir mis días para ti\n\nQuiero vivir mis días para ti"
+      ]
+    },
+    {
+      "id": 152,
+      "titulo": "Santo Dios",
+      "tipo": 1,
+      "diapositivas": [
+        "Me presento ante ti\nEn silencio y en quietud\nSolo para escuchar\nLa dulzura de tu voz",
+        "En tus brazos de amor\nMe has hecho descansar\nY hoy elevo a ti mi voz\nCon todo mi corazón",
+        "Santo Dios recibe mi adoración\nDigno solo eres Tu\nSanto Dios te entrego todo lo que soy\nAmado de mi corazon\nEres Tu.\n\nEres Tu\n\nEn tus brazos de amor\nMe has hecho descansar\nY hoy elevo a ti mi voz\nCon todo mi corazon",
+        "Me presento ante ti\nEn silencio y en quietud\nSolo para escuchar\nLa dulzura de tu voz",
+        "En tus brazos de amor\nMe has hecho descansar\nY hoy elevo a ti mi voz\nCon todo mi corazón",
+        "Santo Dios recibe mi adoración\nDigno solo eres Tu\nSanto Dios te entrego todo lo que soy\nAmado de mi corazon\nEres Tu....",
+        "En tus brazos de amor\nMe has hecho descansar\nY hoy elevo a ti mi voz\nCon todo mi corazón",
+        "Santo Dios recibe mi adoración\nDigno solo eres Tu\nSanto Dios te entrego todo lo que soy\nAmado de mi corazon\n//Eres Tu....//"
+      ]
+    },
+    {
+      "id": 153,
+      "titulo": "Solo de Jesus la Sangre (himno)",
+      "tipo": 1,
+      "diapositivas": [
+        "¿Qué me puede dar perdón?\nSolo de Jesús la sangre;\n¿Y un nuevo corazón?\nSolo de Jesús la sangre;",
+        "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\nSolo de Jesús la sangre.",
+        "Fue el rescate eficaz,\nSolo de Jesús la sangre;\nTrajo santidad y paz,\nSolo de Jesús la sangre.",
+        "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\nSolo de Jesús la sangre.",
+        "Veo para mí salud,\nSolo de Jesús la sangre;\nTiene de sanar virtud,\nSolo de Jesús la sangre.",
+        "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\nSolo de Jesús la sangre.",
+        "Cantaré junto a Sus pies,\nSolo de Jesús la sangre;\nEl Cordero digno es,\nSolo de Jesús la sangre.",
+        "Precioso es el raudal\nQue limpia todo mal;\nNo hay otro manantial,\nSolo de Jesús la sangre."
       ]
     }
   ]
