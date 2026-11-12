@@ -168,7 +168,7 @@ window.CANCIONERO_CONFIG = {
       // activo ahora mismo en la vista previa. Cámbialo por el domingo real
       // que corresponda antes de subirlo (por ejemplo '2026-09-13' para que
       // se active recién ese día).
-      { desde: '2026-05-22',ids: [152,80,48,114,03] }
+      { desde: '2026-05-22',ids: [61,126,15,55,113] }
     ]
   }
 };
